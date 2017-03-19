@@ -11,6 +11,7 @@ function haikuFactory() {
     ['Though I love haiku',      'Those I write are trivial -',        'I continue, still.'],
     ['Every now and then,',      'I will try a real haiku -',          'Still just fit for fun.'],
     ['AngularJS',                'Seems excessive for this page,',     'But - you know - who cares?'],
+    ['Piña coladas',             'And getting caught in the rain:',    'Both things I enjoy.']
     // ['', '', ''],
   ];
 }
