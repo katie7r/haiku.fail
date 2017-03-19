@@ -24,13 +24,11 @@
     </header>
 
     <div class="honeycomb">
-      <div class="ibws-fix" ng-repeat="batch in app.haiku">
-         <div class="hexagon" ng-repeat="haiku in batch" random-bg>
-          <div class="hexagontent haiku">
-            <span>{{ haiku[0] }}</span>
-            <span>{{ haiku[1] }}</span>
-            <span>{{ haiku[2] }}</span>
-          </div>
+      <div class="hexagon" ng-repeat="haiku in app.haiku" random-bg>
+        <div class="hexagontent haiku">
+          <span>{{ haiku[0] }}</span>
+          <span>{{ haiku[1] }}</span>
+          <span>{{ haiku[2] }}</span>
         </div>
       </div>
     </div>
