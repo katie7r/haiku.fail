@@ -10,32 +10,34 @@
   <script src="./app.js" type="text/javascript"></script>
   <script src="./haiku.js" type="text/javascript"></script>
 </head>
-<body ng-controller="AppCtrl as app">
-  <header>
-    <hgroup>
-      <h1>Haiku.fail</h1>
-      <h2 class="haiku">
-        <span><a href="https://en.wikipedia.org/wiki/Haiku" target="_blank">Haiku</a> are complex,</span>
-        <span>More than counting syllables - </span>
-        <span>Mine, however, aren't.</span>
-      </h2>
-    </hgroup>
-  </header>
+<body ng-controller="AppCtrl as app" random-bg>
+  <div class="everything">
+    <header>
+      <hgroup>
+        <h1>Haiku.fail</h1>
+        <h2 class="haiku">
+          <span><a href="https://en.wikipedia.org/wiki/Haiku" target="_blank">Haiku</a> are complex,</span>
+          <span>More than counting syllables - </span>
+          <span>Mine, however, aren't.</span>
+        </h2>
+      </hgroup>
+    </header>
 
-  <div class="honeycomb">
-    <div class="ibws-fix" ng-repeat="batch in app.haiku">
-       <div class="hexagon" ng-repeat="haiku in batch">
-        <div class="hexagontent haiku">
-          <span>{{ haiku[0] }}</span>
-          <span>{{ haiku[1] }}</span>
-          <span>{{ haiku[2] }}</span>
+    <div class="honeycomb">
+      <div class="ibws-fix" ng-repeat="batch in app.haiku">
+         <div class="hexagon" ng-repeat="haiku in batch" random-bg>
+          <div class="hexagontent haiku">
+            <span>{{ haiku[0] }}</span>
+            <span>{{ haiku[1] }}</span>
+            <span>{{ haiku[2] }}</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer>
-    <!-- credits @ me, short (one line) desc, links to GH/Twitter/etc. -->
-  </footer>
+    <footer>
+      <!-- credits @ me, short (one line) desc, links to GH/Twitter/etc. -->
+    </footer>
+  </div>
 </body>
 </html>

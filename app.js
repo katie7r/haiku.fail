@@ -1,6 +1,7 @@
 angular
   .module('HaikuFail', [])
-  .controller('AppCtrl', AppCtrl);
+  .controller('AppCtrl', AppCtrl)
+  .directive('randomBg', randomBg);
 
 AppCtrl.$inject = ['Haiku'];
 
@@ -9,7 +10,7 @@ function AppCtrl(Haiku) {
   var vm = this;
 
   // vm.haiku = Haiku;
-  vm.haiku = batchHaiku(8);
+  vm.haiku = batchHaiku(5);
 
   function batchHaiku(batchSize) {
     var batchedHaiku = [];
@@ -18,4 +19,19 @@ function AppCtrl(Haiku) {
     }
     return batchedHaiku;
   }
+}
+
+function randomBg() {
+  return {
+    restrict: 'A',
+    link: function($scope, element, attrs) {
+      var bgClass = 'bg-' + rnd(1, 12);
+      if (element[0].tagName !== 'BODY' && rnd(1, 10) <= 3) bgClass = 'bg';
+      element.addClass(bgClass);
+    }
+  };
+}
+
+function rnd(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
