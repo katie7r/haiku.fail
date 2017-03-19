@@ -12,15 +12,16 @@
 /*TODO haiku-specific*/
 /*TODO font*/
 
-@import url(http://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+/*@import url(https://fonts.googleapis.com/css?family=Marck+Script);*/
 
-/**, *::before, *::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}*/
+}
 html {
-  font-family: Merriweather, Georgia, serif;
+  font-family: 'Amatic SC', Georgia, serif;
   font-size: 62.5%;
 }
 body {
@@ -39,13 +40,17 @@ body {
   margin-top: 1vh;
   min-height: 99vh;
   width: 100vw;
-  padding-bottom: 249px; /* 0.75 * hexagon height, so 1.299 * font size */
+  /* bottom: 0.75 * hexagon height, so 1.299 * font size */
+  padding: 0 125px 249px;
 }
 header {
   color: #f8f9fa;
-  padding: 3em;
+  font-size: 1.5rem;
+  padding: 1.25em 2em;
+  margin-left: -125px;
 }
 header h1 {
+  font-size: 3em;
   text-transform: lowercase;
 }
 footer {
@@ -99,7 +104,7 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -50%);
   width: 160%;
   line-height: 1.8;
   z-index: 100;
@@ -108,7 +113,7 @@ footer {
   /* inline-block whitespace fix */
   font-size: 0;
 }
-.honeycomb {
+#honeycomb {
   margin: 0 auto;
   text-align: center;
 }
@@ -116,7 +121,7 @@ footer {
 /* haiku-specific */
 
 .haiku {
-
+  font-size: 2.25rem;
 }
 .haiku span {
   display: block;
