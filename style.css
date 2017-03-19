@@ -59,20 +59,49 @@ footer {
 
 /* hexagons */
 
+.hexagon {
+  position: relative;
+  width: 240px; 
+  height: 138.56px;
+  background-color: #64C7CC;
+  margin: 69.28px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 69.28px solid #64C7CC;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 69.28px solid #64C7CC;
+}
+
+/*
 .hexagon, .hexagon::before, .hexagon::after {
   /* easy way: height is width * 1.732 (h116/w67)
   actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
-  remove border-radius for sharp corners on hexagons */
+  remove border-radius for sharp corners on hexagons *
   font-size: 140px;
   height: 1.732em;
   width: 1em;
-  /* border-radius: 20%/5%; */
+  /* border-radius: 20%/5%; *
 }
 .hexagon {
   position: relative;
   display: inline-block;
-  /* left/right margin approx. 25% of .hexagon width + spacing (ml/r18) */
-  /*margin: 1px 0.25em;*/
+  /* left/right margin approx. 25% of .hexagon width + spacing (ml/r18) *
+  /*margin: 1px 0.25em;*
   margin: 0.05em 0.30em;
   background-color: #f8f9fa;
   text-align: center;
@@ -86,7 +115,7 @@ footer {
 .hexagon::before { transform: rotate(-60deg); }
 .hexagon::after  { transform: rotate(60deg);  }
 .hexagon:nth-child(even) {
-  /* top approx. 50% of .hexagon height + spacing (t59) */
+  /* top approx. 50% of .hexagon height + spacing (t59) *
   top: 0.866em;
 }
 /*.hexanone {
@@ -98,7 +127,7 @@ footer {
 }
 .hexanone:nth-child(even) {
   top: 59px;
-}*/
+}*
 .hexagontent {
   font-size: 1.4rem;
   position: absolute;
@@ -110,13 +139,14 @@ footer {
   z-index: 100;
 }
 .ibws-fix {
-  /* inline-block whitespace fix */
+  /* inline-block whitespace fix *
   font-size: 0;
 }
 #honeycomb {
   margin: 0 auto;
   text-align: center;
 }
+*/
 
 /* haiku-specific */
 
