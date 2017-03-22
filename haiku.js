@@ -5,6 +5,7 @@ angular
 function haikuFactory() {
   // This is not the best way to do this... but it sure is easy!
   return [
+    ['Pollen-dusted air',        'Wafting in through open door',       'Makes me want to sneeze.'],
     ['Piña coladas',             'And getting caught in the rain:',    'Both things I enjoy.'],
     ['AngularJS',                'Seems excessive for this page,',     'But - you know - who cares?'],
     ['Every now and then,',      'I will try a real haiku -',          'Still just fit for fun.'],
