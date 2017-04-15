@@ -5,7 +5,7 @@ angular
 function haikuFactory() {
   // This is not the best way to do this... but it sure is easy!
   return [
-    ['This is not quite done',   '(The grid stacks on smaller screens) -', 'I should fix it soon.'],
+    ['This is not quite done',   '(It does not like smaller screens) -', 'I should fix it soon.'],
     ['Working from my home',     'Curled up in the papasan:',          'Why I love Wednesdays.'],
     ['Pollen-dusted breeze',     'Wafting in through open door',       'Makes me want to sneeze.'],
     ['Piña coladas',             'And getting caught in the rain:',    'Both things I enjoy.'],
