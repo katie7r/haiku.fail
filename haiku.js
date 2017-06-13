@@ -5,6 +5,7 @@ angular
 function haikuFactory() {
   // This is not the best way to do this... but it sure is easy!
   return [
+    ['Fro yo sounds so nice',    'When the summer saunters in -',      'That, or frozen ice.'],
     ['This is not quite done',   '(It does not like smaller screens) -', 'I should fix it soon.'],
     ['Working from my home',     'Curled up in the papasan:',          'Why I love Wednesdays.'],
     ['Pollen-dusted breeze',     'Wafting in through open door',       'Makes me want to sneeze.'],
