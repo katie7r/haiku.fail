@@ -9,8 +9,8 @@ AppCtrl.$inject = ['Haiku'];
 function AppCtrl(Haiku) {
   var vm = this;
 
-  // vm.haiku = Haiku;
-  vm.haiku = batchHaiku(5);
+  vm.haiku = Haiku;
+  // vm.haiku = batchHaiku(5);
 
   function batchHaiku(batchSize) {
     var batchedHaiku = [];

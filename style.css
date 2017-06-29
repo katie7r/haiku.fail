@@ -1,7 +1,10 @@
 /*
- * Original Hexagon Tiles code
- * from Code Pen by Graham Pyne at
- * https://codepen.io/gpyne/pen/iElhp
+ * Hexagon Grid code from
+ * http://cssdeck.com/labs/responsive-hexagonal-grid
+ *
+ * // Original Hexagon Tiles code
+ * // from Code Pen by Graham Pyne at
+ * // https://codepen.io/gpyne/pen/iElhp
  *
  * Colors from Open Color swatches at
  * https://yeun.github.io/open-color/
@@ -19,6 +22,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 html {
   font-family: 'Amatic SC', Georgia, serif;
@@ -34,15 +41,15 @@ body {
   overflow-y: scroll;
   /* idk maybe */
   /*text-transform: lowercase;*/
+  /*line-height: 1;*/
 }
-.everything {
-  background-color: #495057;
-  margin-top: 1vh;
-  min-height: 99vh;
+/*.skin {
+  background: rgb(236, 236, 236);
   width: 100vw;
-  /* bottom: 0.75 * hexagon height, so 1.299 * font size */
-  padding: 0 125px 249px;
-}
+  min-height: 99vh;
+  margin: 1vh 0 0;
+  padding: 0;
+}*/
 header {
   color: #f8f9fa;
   font-size: 1.5rem;
@@ -59,20 +66,181 @@ footer {
 
 /* hexagons */
 
+#everything {
+  background: rgb(236, 236, 236);
+  width: 100vw;
+  height: 99vh;
+  margin: 1vh 0 0;
+  padding: 0 125px 249px;
+
+  /*overflow: hidden;*/
+  /*width: 1000px;
+	padding-bottom: 70px;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 2.5em;*/
+
+	/*-webkit-transition: all ease 500ms;
+	-moz-transition: all ease 500ms;
+	-o-transition: all ease 500ms;
+	-ms-transition: all ease 500ms;
+	transition: all ease 500ms;*/
+}
+
+#honeycomb {
+  width: 1000px;
+}
+
+.hexagon {
+  width: 200px;
+  height: 230px;
+  position: relative;
+  display: inline-block;
+}
+
+.hexagon:nth-child(7n-2) {
+  margin-left: 100px;
+}
+
+.hexagon:nth-child(n+5) {
+  margin-top: -55px;
+}
+
+.hexagontent.outer {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  top: -85px;
+
+  overflow: hidden;
+  visibility: hidden;
+
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  -o-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+  cursor: pointer;
+}
+
+.hexagontent.inner {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+.hexagontent.fill {
+  /*-webkit-box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);
+  box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);*/
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  -webkit-background-size: 125%;
+  -moz-background-size: 125%;
+  background-size: 125%;
+  visibility: visible;
+
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/*@media (max-width: 1015px) {
+  #honeycomb {
+    width: 100%;
+  }
+}*/
+
+@media (max-width: 1070px) {
+  #honeycomb {
+    width: 610px;
+  }
+
+  .hexagon:nth-child(5n-1) {
+    margin-left: 102px;
+  }
+
+  .hexagon:nth-child(n+4) {
+    margin-top: -62px;
+  }
+
+  .hexagon:nth-child(7n-2) {
+    margin-left: 0px;
+  }
+
+  .hexagon:nth-child(n+5) {
+    margin-top: -56px;
+  }
+}
+
+@media (max-width: 890px) {
+  #honeycomb {
+    width: 405px;
+  }
+
+  .hexagon:nth-child(5n-1) {
+    margin-left: 0px;
+  }
+
+  .hexagon:nth-child(3n) {
+    margin-left: 102px;
+  }
+
+  .hexagon:nth-child(n+3) {
+    margin-top: -56px;
+  }
+}
+
+@media (max-width: 600px) {
+  #honeycomb {
+    width: 300px;
+  }
+
+  .hexagon:nth-child(3n) {
+    margin-left: 0px;
+  }
+
+  .hexagon:nth-child(2n) {
+    margin-left: 102px;
+  }
+
+  .hexagon:nth-child(n+2) {
+    margin-top: -56px;
+  }
+}
+
+/*
 .hexagon, .hexagon::before, .hexagon::after {
   /* easy way: height is width * 1.732 (h116/w67)
   actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
-  remove border-radius for sharp corners on hexagons */
+  remove border-radius for sharp corners on hexagons **
   font-size: 140px;
   height: 1.732em;
   width: 1em;
-  /* border-radius: 20%/5%; */
+  /* border-radius: 20%/5%; **
 }
 .hexagon {
   position: relative;
   display: inline-block;
-  /* left/right margin approx. 25% of .hexagon width + spacing (ml/r18) */
-  /*margin: 1px 0.25em;*/
+  /* left/right margin approx. 25% of .hexagon width + spacing (ml/r18) **
+  /*margin: 1px 0.25em;**
   margin: 0.05em 0.30em;
   background-color: #f8f9fa;
   text-align: center;
@@ -86,7 +254,7 @@ footer {
 .hexagon::before { transform: rotate(-60deg); }
 .hexagon::after  { transform: rotate(60deg);  }
 .hexagon:nth-child(even) {
-  /* top approx. 50% of .hexagon height + spacing (t59) */
+  /* top approx. 50% of .hexagon height + spacing (t59) **
   top: 0.866em;
 }
 /*.hexanone {
@@ -98,7 +266,7 @@ footer {
 }
 .hexanone:nth-child(even) {
   top: 59px;
-}*/
+}**
 .hexagontent {
   font-size: 1.4rem;
   position: absolute;
@@ -109,14 +277,10 @@ footer {
   line-height: 1.8;
   z-index: 100;
 }
-.ibws-fix {
-  /* inline-block whitespace fix */
-  font-size: 0;
-}
 #honeycomb {
   margin: 0 auto;
   text-align: center;
-}
+}*/
 
 /* haiku-specific */
 
