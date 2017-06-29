@@ -11,43 +11,41 @@
   <script src="./haiku.js" type="text/javascript"></script>
 </head>
 <body ng-controller="AppCtrl as app" random-bg>
-  <!-- <div class="skin"> -->
-    <div id="everything">
-      <header>
-        <hgroup>
-          <h1>Haiku.fail</h1>
-          <h2 class="haiku">
-            <span><a href="https://en.wikipedia.org/wiki/Haiku" target="_blank">Haiku</a> are complex,</span>
-            <span>More than counting syllables - </span>
-            <span>Mine, however, aren't.</span>
-          </h2>
-        </hgroup>
-      </header>
+  <div id="everything">
+    <header>
+      <hgroup>
+        <h1>Haiku.fail</h1>
+        <h2 class="haiku">
+          <span><a href="https://en.wikipedia.org/wiki/Haiku" target="_blank">Haiku</a> are complex,</span>
+          <span>More than counting syllables - </span>
+          <span>Mine, however, aren't.</span>
+        </h2>
+      </hgroup>
+    </header>
 
-      <div id="honeycomb">
-         <div class="hexagon" ng-repeat="haiku in app.haiku">
+    <div id="honeycomb">
+       <div class="hexagon" ng-repeat="haiku in app.haiku">
 
-          <div class="hexagontent outer">
-            <div class="hexagontent inner">
-              <div class="hexagontent fill" random-bg>
+        <div class="hexagontent outer">
+          <div class="hexagontent inner">
+            <div class="hexagontent fill" random-bg>
 
-                <div class="haiku">
-                  <span>{{ haiku[0] }}</span>
-                  <span>{{ haiku[1] }}</span>
-                  <span>{{ haiku[2] }}</span>
-                </div>
-
+              <div class="haiku">
+                <span>{{ haiku[0] }}</span>
+                <span>{{ haiku[1] }}</span>
+                <span>{{ haiku[2] }}</span>
               </div>
+
             </div>
           </div>
-
         </div>
-      </div>
 
-      <!-- <footer>
-        <a href="https://github.com/katie7r/haiku.fail" target="_blank">GitHub</a>
-      </footer> -->
+      </div>
     </div>
-  <!-- </div> -->
+
+    <!-- <footer>
+      <a href="https://github.com/katie7r/haiku.fail" target="_blank">GitHub</a>
+    </footer> -->
+  </div>
 </body>
 </html>

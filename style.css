@@ -1,18 +1,13 @@
 /*
- * Hexagon Grid code from
+ * Original hexagon grid code from
  * http://cssdeck.com/labs/responsive-hexagonal-grid
- *
- * // Original Hexagon Tiles code
- * // from Code Pen by Graham Pyne at
- * // https://codepen.io/gpyne/pen/iElhp
  *
  * Colors from Open Color swatches at
  * https://yeun.github.io/open-color/
+ *
+ * ... this all would have been so much easier with Sass,,,
  */
 
-/*TODO size*/
-/*TODO grid/container*/
-/*TODO haiku-specific*/
 /*TODO font*/
 
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
@@ -41,15 +36,7 @@ body {
   overflow-y: scroll;
   /* idk maybe */
   /*text-transform: lowercase;*/
-  /*line-height: 1;*/
 }
-/*.skin {
-  background: rgb(236, 236, 236);
-  width: 100vw;
-  min-height: 99vh;
-  margin: 1vh 0 0;
-  padding: 0;
-}*/
 header {
   color: #f8f9fa;
   font-size: 1.5rem;
@@ -64,52 +51,32 @@ footer {
 
 }
 
-/* hexagons */
-
 #everything {
-  background: rgb(236, 236, 236);
   width: 100vw;
   height: 99vh;
   margin: 1vh 0 0;
-  padding: 0 125px 249px;
-
-  /*overflow: hidden;*/
-  /*width: 1000px;
-	padding-bottom: 70px;
-	position: relative;
-	margin: 0 auto;
-	margin-bottom: 2.5em;*/
-
-	/*-webkit-transition: all ease 500ms;
-	-moz-transition: all ease 500ms;
-	-o-transition: all ease 500ms;
-	-ms-transition: all ease 500ms;
-	transition: all ease 500ms;*/
+  padding: 0 125px;
+  overflow-y: scroll;
 }
 
+/* hexagons */
+
 #honeycomb {
-  width: 1000px;
+  margin-top: 35px;
 }
 
 .hexagon {
-  width: 200px;
-  height: 230px;
+  width: 250px;
+  height: 280px;
+  margin-right: 20px;
   position: relative;
   display: inline-block;
 }
 
-.hexagon:nth-child(7n-2) {
-  margin-left: 100px;
-}
-
-.hexagon:nth-child(n+5) {
-  margin-top: -55px;
-}
-
 .hexagontent.outer {
   position: absolute;
-  width: 200px;
-  height: 400px;
+  width: 250px;
+  height: 450px;
   top: -85px;
 
   overflow: hidden;
@@ -120,7 +87,6 @@ footer {
   -o-transform: rotate(120deg);
   -ms-transform: rotate(120deg);
   transform: rotate(120deg);
-  cursor: pointer;
 }
 
 .hexagontent.inner {
@@ -136,8 +102,6 @@ footer {
 }
 
 .hexagontent.fill {
-  /*-webkit-box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);
-  box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);*/
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -162,128 +126,198 @@ footer {
   transition: all 0.5s ease;
 }
 
-/*@media (max-width: 1015px) {
+/* grid: 4 x 4 */
+
+#honeycomb {
+  width: 1210px;
+}
+
+.hexagon:nth-child(8n-3) {
+  margin-left: 135px;
+}
+
+.hexagon:nth-child(n+5) {
+  margin-top: -45px;
+}
+
+/* grid: 4 x 3 */
+
+@media (max-width: 1290px) {
   #honeycomb {
-    width: 100%;
-  }
-}*/
-
-@media (max-width: 1070px) {
-  #honeycomb {
-    width: 610px;
+    width: 1080px;
   }
 
-  .hexagon:nth-child(5n-1) {
-    margin-left: 102px;
-  }
-
-  .hexagon:nth-child(n+4) {
-    margin-top: -62px;
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
   }
 
   .hexagon:nth-child(7n-2) {
-    margin-left: 0px;
+    margin-left: 135px;
   }
 
   .hexagon:nth-child(n+5) {
-    margin-top: -56px;
+    margin-top: -45px;
   }
 }
 
-@media (max-width: 890px) {
+@media (max-width: 1330px) {
   #honeycomb {
-    width: 405px;
+    margin-left: -90px;
+  }
+}
+
+/* grid: 3 x 3 */
+
+@media (max-width: 1150px) {
+  #honeycomb {
+    width: 940px;
+  }
+
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
+  }
+
+  .hexagon:nth-child(6n-2) {
+    margin-left: 130px;
+  }
+
+  .hexagon:nth-child(n+4) {
+    margin-top: -45px;
+  }
+}
+
+/* grid: 3 x 2 */
+
+@media (max-width: 1010px) {
+  #honeycomb {
+    width: 810px;
+  }
+
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
   }
 
   .hexagon:nth-child(5n-1) {
-    margin-left: 0px;
-  }
-
-  .hexagon:nth-child(3n) {
-    margin-left: 102px;
+    margin-left: 130px;
   }
 
   .hexagon:nth-child(n+3) {
-    margin-top: -56px;
+    margin-top: -45px;
   }
 }
 
-@media (max-width: 600px) {
+/* grid: 2 x 2 */
+
+@media (max-width: 880px) {
+  #honeycomb {
+    width: 670px;
+  }
+
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
+  }
+
+  .hexagon:nth-child(4n-1) {
+    margin-left: 130px;
+  }
+
+  .hexagon:nth-child(n+2) {
+    margin-top: -45px;
+  }
+}
+
+/* grid: 2 x 1 */
+
+@media (max-width: 740px) {
+  #honeycomb {
+    width: 540px;
+  }
+
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
+  }
+
+  .hexagon:nth-child(3n) {
+    margin-left: 130px;
+  }
+
+  .hexagon:nth-child(n+2) {
+    margin-top: -45px;
+  }
+}
+
+/* grid: 1 x 1 */
+
+@media (max-width: 610px) {
+  #honeycomb {
+    width: 400px;
+  }
+
+  .hexagon:nth-child(n) {
+    margin-top: auto;
+    margin-left: auto;
+  }
+
+  .hexagon:nth-child(2n) {
+    margin-left: 130px;
+  }
+
+  .hexagon:nth-child(n+2) {
+    margin-top: -45px;
+  }
+}
+
+/* grid: 1 x 1 ... TODO rotate and stack instead of staggering */
+/*@media (max-width: 370px) {
   #honeycomb {
     width: 300px;
   }
 
-  .hexagon:nth-child(3n) {
-    margin-left: 0px;
+  .hexagon {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
-  .hexagon:nth-child(2n) {
-    margin-left: 102px;
+  .hexagontent.outer {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg);
   }
 
-  .hexagon:nth-child(n+2) {
-    margin-top: -56px;
+  .hexagontent.inner,
+  .hexagontent.fill {
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
   }
-}
 
-/*
-.hexagon, .hexagon::before, .hexagon::after {
-  /* easy way: height is width * 1.732 (h116/w67)
-  actual formula is 2*(width/(2*Math.tan(Math.PI/6)))
-  remove border-radius for sharp corners on hexagons **
-  font-size: 140px;
-  height: 1.732em;
-  width: 1em;
-  /* border-radius: 20%/5%; **
-}
-.hexagon {
-  position: relative;
-  display: inline-block;
-  /* left/right margin approx. 25% of .hexagon width + spacing (ml/r18) **
-  /*margin: 1px 0.25em;**
-  margin: 0.05em 0.30em;
-  background-color: #f8f9fa;
-  text-align: center;
-}
-.hexagon::before, .hexagon::after {
-  background-color: inherit;
-  content: "";
-  position: absolute;
-  left: 0;
-}
-.hexagon::before { transform: rotate(-60deg); }
-.hexagon::after  { transform: rotate(60deg);  }
-.hexagon:nth-child(even) {
-  /* top approx. 50% of .hexagon height + spacing (t59) **
-  top: 0.866em;
-}
-/*.hexanone {
-  position: relative;
-  display: inline-block;
-  width: 67px;
-  height: 116px;
-  margin: 1px 18px;
-}
-.hexanone:nth-child(even) {
-  top: 59px;
-}**
-.hexagontent {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 160%;
-  line-height: 1.8;
-  z-index: 100;
-}
-#honeycomb {
-  margin: 0 auto;
-  text-align: center;
+  .haiku {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
 }*/
 
 /* haiku-specific */
 
+.hexagon .haiku {
+  margin-top: 180px;
+  text-align: center;
+}
 .haiku {
   font-size: 2.25rem;
 }
@@ -314,7 +348,7 @@ body {
   color: #495057;
   background-color: #f8f9fa;
 }
-.everything {
+#everything {
   background-color: #f8f9fa;
 }
 header, footer {
