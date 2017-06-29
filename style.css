@@ -46,6 +46,7 @@ header {
 header h1 {
   font-size: 3em;
   text-transform: lowercase;
+  /* + text-shadow based on bg */
 }
 footer {
 
@@ -369,6 +370,19 @@ header a, footer a {
 .bg-10, .bg-10 .bg { background-color: #d8f5a2; }
 .bg-11, .bg-11 .bg { background-color: #ffec99; }
 .bg-12, .bg-12 .bg { background-color: #ffd8a8; }
+
+.bg-1  h1 { text-shadow: #ffc9c9 2px 2px; }
+.bg-2  h1 { text-shadow: #fcc2d7 2px 2px; }
+.bg-3  h1 { text-shadow: #eebefa 2px 2px; }
+.bg-4  h1 { text-shadow: #d0bfff 2px 2px; }
+.bg-5  h1 { text-shadow: #bac8ff 2px 2px; }
+.bg-6  h1 { text-shadow: #a3daff 2px 2px; }
+.bg-7  h1 { text-shadow: #99e9f2 2px 2px; }
+.bg-8  h1 { text-shadow: #96f2d7 2px 2px; }
+.bg-9  h1 { text-shadow: #b2f2bb 2px 2px; }
+.bg-10 h1 { text-shadow: #d8f5a2 2px 2px; }
+.bg-11 h1 { text-shadow: #ffec99 2px 2px; }
+.bg-12 h1 { text-shadow: #ffd8a8 2px 2px; }
 
 /* dark hex on light page */
 /*
