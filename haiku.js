@@ -5,6 +5,7 @@ angular
 function haikuFactory() {
   // This is not the best way to do this... but it sure is easy!
   return [
+    ['I have let this go',       'Far too long without a new',         'Terrible haiku.'],
     ['How disappointing',        'To find out that today is',          'Not even Friday.'],
     ['The moon attempted',       'An (unsuccessful) high coup -',      'As I often do.'],
     // ['Though the sun prevailed', 'When set upon by the moon...',       'High coup attempted.'],
